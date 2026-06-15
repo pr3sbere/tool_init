@@ -30,7 +30,7 @@ export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 echo -e "${BLUE}[*] Installing Python tools via uv...${NC}"
 
 PYPI_TOOLS=(
-    "impacket" "certipy-ad" "bloodhound-ce-python" "mitm6" 
+    "impacket" "certipy-ad" "bloodhound-ce" "mitm6" 
     "pywerview" "httpie" "ssh-audit" "kerbrute" 
     "bloodyAD" "ldapdomaindump" "pywhisker"
 )
