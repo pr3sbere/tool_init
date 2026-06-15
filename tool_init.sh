@@ -3,7 +3,7 @@
 # Colors for output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
-RED='\033[0;31m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
 echo -e "${BLUE}[*] Starting Setup for Ubuntu/Kali...${NC}"
@@ -17,19 +17,20 @@ sudo apt-get install -y git python3-pip build-essential libssl-dev libffi-dev li
 if ! command -v uv &> /dev/null; then
     echo -e "${BLUE}[*] Installing uv...${NC}"
     curl -LsSf https://astral.sh/uv/install.sh | sh
+    # Source for the duration of this script only
     source $HOME/.cargo/env
 else
     echo -e "${GREEN}[+] uv is already installed.${NC}"
 fi
 
-# Ensure path is updated for current session
+# Ensure paths are set for the current script execution
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # 3. Install Python tools via uv
 echo -e "${BLUE}[*] Installing Python tools via uv...${NC}"
 
 PYPI_TOOLS=(
-    "impacket" "certipy-ad" "bloodhound-ce" "mitm6" 
+    "impacket" "certipy-ad" "bloodhound-ce-python" "mitm6" 
     "pywerview" "httpie" "ssh-audit" "kerbrute" 
     "bloodyAD" "ldapdomaindump" "pywhisker"
 )
@@ -100,4 +101,17 @@ cat << 'EOF' > README.md
 - Update all Python tools: `uv tool upgrade --all`
 EOF
 
-echo -e "${GREEN}[+] Done! Restart your terminal or run 'source ~/.bashrc' to use the tools.${NC}"
+# 6. Final Notification and Reload Instructions
+echo -e "\n${GREEN}[+] Setup Complete!${NC}"
+echo -e "${YELLOW}-----------------------------------------------------------${NC}"
+echo -e "${YELLOW}IMPORTANT: You must reload your shell to use the new tools.${NC}"
+
+# Detect shell to give the right command
+if [[ $SHELL == *"zsh"* ]]; then
+    echo -e "Run the following command now:"
+    echo -e "${BLUE}source ~/.zshrc${NC}"
+else
+    echo -e "Run the following command now:"
+    echo -e "${BLUE}source ~/.bashrc${NC}"
+fi
+echo -e "${YELLOW}-----------------------------------------------------------${NC}"
