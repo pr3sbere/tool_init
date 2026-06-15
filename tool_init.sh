@@ -91,7 +91,7 @@ cat << 'EOF' > README.md
 
 ## General Installation Info
 - **aquatone**: Installed via release. GitHub: https://github.com/michenriksen/aquatone.git
-- **witnessme**: Uses pipx (Note: Also installed via uv tool).
+- **witnessme**: Uses pipx 
 - **PRETENDER**: Installed using (go): git: https://github.com/RedTeamPentesting/pretender.git then 'go build'
 - **rusthound**: Installed using (cargo): cargo install rusthound-ce
 - **httprobe**: go install github.com/tomnomnom/httprobe@latest
