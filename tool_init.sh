@@ -67,7 +67,6 @@ REPOS=(
     "https://github.com/BenZamir/MITM6-Kerberos-CNAME-Abuse.git"
     "https://github.com/lgandx/PCredz.git"
     "https://github.com/secorizon/MSFinger.git"
-    "https://github.com/cddmp/enum4linux-ng.git"
     "https://github.com/RedSiege/EyeWitness.git"
     "https://github.com/nullt3r/udpx.git"
     "https://github.com/urbanadventurer/username-anarchy.git"
