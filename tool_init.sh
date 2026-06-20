@@ -77,6 +77,7 @@ REPOS=(
     "https://github.com/tomnomnom/httprobe.git"
     "https://github.com/ropnop/windapsearch.git"
     "https://github.com/adrecon/ADRecon.git"
+    "https://github.com/PShlyundin/GPOHunter.git"
 )
 
 for repo in "${REPOS[@]}"; do
